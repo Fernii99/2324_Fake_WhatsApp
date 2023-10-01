@@ -30,7 +30,7 @@ export const LeftActions = (progress, dragX) => {
               color: 'white',
               fontWeight: '600',
             }}>
-            <FontAwesomeIcon icon={faThumbTack} size={15} />
+            <FontAwesomeIcon icon={faThumbTack} size={15} color='white'/>
             Fijar
           </Animated.Text>
         </View>

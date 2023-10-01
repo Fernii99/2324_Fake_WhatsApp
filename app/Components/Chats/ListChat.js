@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import { StyleSheet, View, Text, Image} from "react-native";
 
 
-import { RightActions } from './RightSlider';
-import { LeftActions } from './LeftSlider';
+import { RightActions } from '../RightSlider';
+import { LeftActions } from '../LeftSlider';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Swipeable from 'react-native-gesture-handler/Swipeable'
 
@@ -12,31 +12,28 @@ import Swipeable from 'react-native-gesture-handler/Swipeable'
 export default class ListChat extends Component{
     render(){
         return(
-            
                     <GestureHandlerRootView >
                         <Swipeable renderRightActions={RightActions} renderLeftActions={LeftActions}>
                             <View style={ styles.listItemContainer }>
-                                    <View style={styles.chatContainer}>
-                                        <View style={styles.imageContainer} > 
-                                            <Image style={styles.avatar} source={{ uri: this.props.image }} />
+                                <View style={styles.chatContainer}>
+                                    <View style={styles.imageContainer} > 
+                                        <Image style={styles.avatar} source={{ uri: this.props.image }} />
+                                    </View>
+
+                                    <View style={styles.dataContainer}>
+                                        <View style={styles.nameDateContainer}>
+                                            <Text style={styles.name}> {this.props.first_name}</Text>
+                                            <Text style={ styles.textContainers}>{this.props.time}</Text>
                                         </View>
 
-                                        <View style={styles.dataContainer}>
-                                            <View style={styles.nameDateContainer}>
-                                                <Text style={styles.name}> {this.props.first_name}</Text>
-                                                <Text style={ styles.textContainers}>{this.props.time}</Text>
-                                            </View>
-
-                                            <View style={styles.messageContainer}>
-                                                <Text style={ styles.textContainers} >{this.props.message}</Text>
-                                            </View>
+                                        <View style={styles.messageContainer}>
+                                            <Text style={ styles.textContainers} >{this.props.message}</Text>
                                         </View>
                                     </View>
+                                </View>
                             </View>
                         </Swipeable>
                     </GestureHandlerRootView>    
-                
-           
         );
     }
 }

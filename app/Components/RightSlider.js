@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Animated  } from 'react-native';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCamera  } from '@fortawesome/free-solid-svg-icons/faCamera'
+import { faEllipsis  } from '@fortawesome/free-solid-svg-icons/faEllipsis'
+import { faBoxArchive  } from '@fortawesome/free-solid-svg-icons/faBoxArchive'
 
 export const RightActions = (progress, dragX) => {
     const scale = dragX.interpolate({
@@ -12,23 +13,25 @@ export const RightActions = (progress, dragX) => {
 
     return (
       <>
-        <View style={{ backgroundColor: '#c8c8cc',width: 50, justifyContent: 'center' }}>
+        <View style={{ direction: "row", backgroundColor: '#c8c8cc', width: 70, justifyContent: 'center', alignItems: "center" }}>
           <Animated.Text
             style={{
               color: 'white',
               fontWeight: '600',
               transform: [{ scale }]
             }}>
+              <FontAwesomeIcon icon={faEllipsis} />
             Mas
           </Animated.Text>
         </View>
-        <View style={{ backgroundColor: '#526e9f', justifyContent: 'center', alignItems:'center'}}>
+        <View style={{ direction: "row", backgroundColor: '#526e9f', width: 70, justifyContent: 'center', alignItems: "center" }}>
           <Animated.Text
             style={{
               color: 'white',
               fontWeight: '600',
               transform: [{ scale }]
             }}>
+            <FontAwesomeIcon icon={faBoxArchive} />
             Archivar
           </Animated.Text>
         </View>

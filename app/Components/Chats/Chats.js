@@ -5,10 +5,8 @@ import { faCamera  } from '@fortawesome/free-solid-svg-icons/faCamera'
 import { faNoteSticky } from '@fortawesome/free-solid-svg-icons/faNoteSticky'
 
 
-
-
 import axios from 'axios';
-import { FAKE_PROFILE } from '../data';
+import { FAKE_PROFILE } from '../../data';
 
 
 import ListChat from './ListChat'
@@ -25,7 +23,7 @@ export default class Chats extends Component{
             
                     <View style={{flex:6/7}}>
                         <View>
-                            <Text style={{fontSize: 30, fontWeight: 'bold'}}>CHATS</Text>
+                            <Text style={{fontSize: 30, fontWeight: 'bold'}}> CHATS </Text>
                         </View>
                         <FlatList
                             data={this.state.chatList}
@@ -35,7 +33,7 @@ export default class Chats extends Component{
                                     message={item.message}
                                     image={item.image}
                                     date={item.date}
-                                    time={item.time}
+                                    
                                 />
                             )}
                             keyExtractor={item => item.id}

@@ -6,11 +6,17 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 
 
-import News from './app/components/News';
-import Calls from './app/components/Calls';
-import Communities from './app/components/Communities';
-import Chats from './app/components/Chats';
-import Settings from './app/components/Settings';
+import News from './News';
+import Calls from './Calls/Calls';
+import Communities from './Communities';
+import Chats from './Chats/Chats';
+import Settings from './Settings';
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons/faNewspaper';
+import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup';
+import { faComment } from '@fortawesome/free-solid-svg-icons/faComment';
+import { faGear } from '@fortawesome/free-solid-svg-icons/faGear';
 
 
 
@@ -18,31 +24,33 @@ import Settings from './app/components/Settings';
 export default class BottomNavigation extends Component{
     render = () => {
         return (
-            <NavigationContainer>
                 <Tab.Navigator>
                     <Tab.Screen  name="news" component={ News } options={{
                         headerStyle: {
                         height:0,
                         } ,
-                        tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="bell" color={color} size={26} />
+                        tabBarIcon: ({ color }) => (                       
+                            <View><FontAwesomeIcon icon={faNewspaper} /></View>
+
                         ),
                     }}
                     />
-                    <Tab.Screen name="Calls" component={Calls} options={{
+                    <Tab.Screen name="Calls" component={ Calls } options={{
                         headerStyle: {
                         height:0,
                         } ,
-                        tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="bell" color={color} size={26} />
+                        tabBarIcon: ({ color }) => (                        
+                            <View><FontAwesomeIcon icon={faPhone}/></View>
+
                         ),
                     }}/>
                     <Tab.Screen name="Communities" component={Communities} options={{
                         headerStyle: {
                         height:0,
                         } ,
-                        tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="bell" color={color} size={26} />
+                        tabBarIcon: ({ color }) => (                        
+                            <View><FontAwesomeIcon icon={faUserGroup}/></View>
+
                         ),
                     }}/>
                     <Tab.Screen name="Chats" component={Chats} options={{
@@ -50,7 +58,8 @@ export default class BottomNavigation extends Component{
                         height:0,
                         } ,
                         tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="bell" color={color} size={26} />
+                            <View><FontAwesomeIcon icon={faComment}/></View>
+
                         ),
                     }}/>
                     <Tab.Screen name="Settings" component={ Settings } options={{
@@ -58,11 +67,10 @@ export default class BottomNavigation extends Component{
                         height:0,
                         } ,
                         tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="bell" color={color} size={26} />
+                            <View><FontAwesomeIcon icon={faGear} /></View>
                         ),
                     }}/>
                 </Tab.Navigator>
-            </NavigationContainer>
 
           );
         }

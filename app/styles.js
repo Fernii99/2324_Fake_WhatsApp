@@ -44,7 +44,23 @@ export const styles = StyleSheet.create({
       color: '#2541cf',
       marginRight: 5,
       marginLeft: 5
-    }
+    },
+    navigator:{
+      fontSize: 25,
+      fontWeight: 'bold',
+      backgroundColor: 'rgba(246,246,247,255)',
+    },
+    headerBar: {
+      height:90,
+      backgroundColor: "rgba(246,246,247,255)"
+  },
+  container:{
+      flex: 1,
+  },
+  flatList: {
+      flex: 1,
+      backgroundColor: "white",
+  },
   
   
   })
