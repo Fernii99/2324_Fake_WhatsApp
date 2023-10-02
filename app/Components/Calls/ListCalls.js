@@ -16,7 +16,7 @@ export default class ListCalls extends Component{
                     <View style={styles.personData}>
                         <Text>{this.props.first_name}  </Text>
                         <View style={styles.statusType}>
-                            {this.props.video_call === true ? <FontAwesomeIcon icon={faPhone} size={1} /> :<FontAwesomeIcon icon={faVideo} size={15}  /> } 
+                            {this.props.video_call === true ? <FontAwesomeIcon icon={faVideo} size={1} /> : <FontAwesomeIcon icon={faVideo} size={15}  /> } 
                             {this.props.missed === true ? <Text> Perdida </Text> : <Text>Contestada</Text>}
                         </View>
                     </View>

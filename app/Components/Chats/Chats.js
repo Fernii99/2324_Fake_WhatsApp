@@ -3,10 +3,6 @@ import { View, Animated, ActivityIndicator, FlatList, StyleSheet,Text, SafeAreaV
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCamera  } from '@fortawesome/free-solid-svg-icons/faCamera'
 import { faNoteSticky } from '@fortawesome/free-solid-svg-icons/faNoteSticky'
-import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
-
-
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 
 
@@ -14,6 +10,7 @@ import axios from 'axios';
 import { FAKE_PROFILE } from '../../data';
 
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import ListChat from './ListChat'
 import { ScrollView } from 'react-native-gesture-handler';
 import { SearchBar } from '@rneui/themed';
@@ -49,7 +46,6 @@ export default class Chats extends Component{
                                             <Text style={styles.title}>Chats</Text>
 
                                             <SearchBar
-                                            platform="ios"
                                             containerStyle={{ borderRadius: 100,marginTop: 10, marginBottom: 30}}
                                             inputContainerStyle={{borderRadius: 15, height: 10}}
                                             placeholder="Buscar"
@@ -65,13 +61,13 @@ export default class Chats extends Component{
                                         </View>
 
                                     <View style={styles.archived}>
-                                            <View style={styles.archivedIcon}>
-                                                <FontAwesomeIcon icon={faArchive} size={17} color='grey'></FontAwesomeIcon>
-                                            </View>
-                                            <View style={styles.archivedTextContainer}>
-                                                <Text style={styles.archivedText}>Archivados</Text>
-                                            </View>
+                                        <View style={styles.archivedIcon}>
+                                            <FontAwesomeIcon icon={faArchive} size={17} color='grey'></FontAwesomeIcon>
                                         </View>
+                                        <View style={styles.archivedTextContainer}>
+                                            <Text style={styles.archivedText}>Archivados</Text>
+                                        </View>
+                                    </View>
                         
                                     <FlatList
                                         data={this.state.chatList}
@@ -86,14 +82,11 @@ export default class Chats extends Component{
                                                 )}
                                         keyExtractor={item => item.id}
                                         style={styles.flatList}
-                                        
                                         />
-                        
                                 </ScrollView>
                         </SafeAreaView>
                         </GestureHandlerRootView>
                     </View>
-                   
                 </View>
             )
         }else{
@@ -180,8 +173,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingBottom: 10,
         borderBottomWidth: 0.3,
-        paddingHorizontal: 10
-
+        
       },
       diffusionText:{
         color: '#3478F6',
