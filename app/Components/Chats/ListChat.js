@@ -23,11 +23,14 @@ export default class ListChat extends Component{
                                     <View style={styles.dataContainer}>
                                         <View style={styles.nameDateContainer}>
                                             <Text style={styles.name}> {this.props.first_name}</Text>
-                                            <Text style={ styles.textContainers}>{this.props.time}</Text>
-                                        </View>
-
-                                        <View style={styles.messageContainer}>
+                                        
                                             <Text style={ styles.textContainers} >{this.props.message}</Text>
+                                        </View>
+                                        <View>
+                                        <View style={styles.dateContainer}>
+                                            <Text style={ styles.textContainers} >{this.props.date}</Text>
+                                            
+                                        </View>
                                         </View>
                                     </View>
                                 </View>
@@ -52,27 +55,33 @@ const styles = StyleSheet.create({
     imageContainer: {
         flex: 1/4,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+
     },
     avatar: {
         borderRadius: 30,
         width:60,
-        height: 60
+        height: 60,
     },
     dataContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
         flex: 3/4,
         borderColor: 'grey',
         borderTopWidth: 0.3,
-        paddingTop:10
+        paddingTop:10,
+        paddingRight: 10,
     },
     nameDateContainer: {
         borderColor: "black",
-        flexDirection: "row",
-        justifyContent: "space-between",
         alignContent: "center",
         alignItems: "flex-start",
        paddingRight: 10,
         
+    },
+    dateContainer:{
+        
+        justifyContent: "flex-end"
     },
     name: {
         fontWeight: "bold",

@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Tab = createBottomTabNavigator();
 
 
-import News from './News';
+import News from './News/News';
 import Calls from './Calls/Calls';
 import Communities from './Communities';
 import Chats from './Chats/Chats';
@@ -18,13 +18,17 @@ import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup';
 import { faComment } from '@fortawesome/free-solid-svg-icons/faComment';
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear';
 
+import styles from '../styles'
+
 
 
 
 export default class BottomNavigation extends Component{
     render = () => {
         return (
-                <Tab.Navigator>
+                <Tab.Navigator  screenOptions={{
+                    tabBarStyle: { backgroundColor: '#F7F7F7' },
+                  }}>
                     <Tab.Screen  name="news" component={ News } options={{
                         headerStyle: {
                         height:0,

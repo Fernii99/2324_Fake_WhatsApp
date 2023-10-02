@@ -14,7 +14,7 @@ export const LeftActions = (progress, dragX) => {
 
     return (
       <>
-        <View style={{ direction: "row", backgroundColor: '#c8c8cc', width: 70, justifyContent: 'center', alignItems: "center" }}>
+        <View style={{ flexDirection:"column", backgroundColor: '#c8c8cc', width: 70, justifyContent: 'center', alignItems: "center" }}>
           <Animated.Text
             style={{
                 color: 'white',

@@ -28,17 +28,8 @@ export const styles = StyleSheet.create({
       fontSize: 20,
       color: '#2541cf'
     },
-    contentContainer: {
-      
-    },
-    chatsContainer: {
-  
-    },
-    footerContainer: {
-      flex: 1
-    },
-    logo: {
-  
+    navigationBar:{
+      backgroundColor: 'rgba(246,246,247,255)',
     },
     icons: {
       color: '#2541cf',

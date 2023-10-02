@@ -12,18 +12,19 @@ export default class ListCalls extends Component{
                 <View style={styles.ImageContainer}>
                     <Image style={ styles.avatar} source={{ uri: this.props.image }} />
                 </View>
-
-                <View style={styles.personData}>
-                    <Text>{this.props.first_name}  </Text>
-                        <View >
-                            {this.props.video_call === true ? <FontAwesomeIcon icon={faPhone} size={25} /> :<FontAwesomeIcon icon={faVideo} size={25}  /> } 
-                            {this.props.missed === true ? <Text>Perdida </Text> : <Text>Contestada</Text>}
+                <View styles={styles.userInformation}>
+                    <View style={styles.personData}>
+                        <Text>{this.props.first_name}  </Text>
+                        <View style={styles.statusType}>
+                            {this.props.video_call === true ? <FontAwesomeIcon icon={faPhone} size={1} /> :<FontAwesomeIcon icon={faVideo} size={15}  /> } 
+                            {this.props.missed === true ? <Text> Perdida </Text> : <Text>Contestada</Text>}
+                        </View>
                     </View>
-                </View>
 
-                <View style={styles.infoContainer}>
-                    <Text>{this.props.date}</Text>
-                    <Text>  </Text>
+                    <View style={styles.infoContainer}>
+                        <Text>{this.props.date}</Text>
+                        <Text>  </Text>
+                    </View>
                 </View>
             </View >
         )
@@ -35,21 +36,39 @@ callContainer:{
     flex:1,
     flexDirection: "row",
     backgroundColor: '#fff',
-    marginBottom: 30
+    height: 60,
+
 },
 ImageContainer:{
     flex:1/5,
+    justifyContent: "center",
+
+    alignItems:"center"
+
+},
+userInformation:{
+    flex:4/5,
+    borderTopWidth: 0.5,
+    justifyContent: "space-around"
 },
 personData: {
-    flex:3/5,
+
+
+    justifyContent: "center"
+
 },
 infoContainer:{
-    flex:1/5
+    
+    alignContent:"flex-end"
+    
 },
 avatar:{
     width: 35,
     height:35,
     borderRadius: 35
+},
+statusType:{
+    flexDirection: "row"
 }
 
 })
